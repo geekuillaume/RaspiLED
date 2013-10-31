@@ -1,0 +1,9 @@
+{
+  "name": "RaspiLED",
+  "description": "A simple websocket server to modify pi-blaster values",
+  "dependencies": {
+    "express": "~3.4.4",
+    "pi-blaster.js": "0.0.2",
+    "socket.io": "~0.9.16"
+  }
+}

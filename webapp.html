@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RaspiLED</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost');
+        var sliders = document.getElementsByTagName("input");
+        var updateColor = function(el) {
+            var value = Number(el.value) / 100;
+            socket.emit("changeColor", el.id + "=" + value);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>RaspiLED</h1>
+    <label>Red: <input type="range" min="0" max="100" id="R" onchange="updateColor(this)"></label>
+    <label>Green: <input type="range" min="0" max="100" id="G" onchange="updateColor(this)"></label>
+    <label>Blue: <input type="range" min="0" max="100" id="B" onchange="updateColor(this)"></label>
+</body>
+</html>
